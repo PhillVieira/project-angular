@@ -1,13 +1,13 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\PratoTrait;
+use Illuminate\Auth\PratoInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Prato extends Eloquent implements UserInterface, RemindableInterface {
+class Prato extends Eloquent implements PratoInterface, RemindableInterface {
 
-	use UserTrait, RemindableTrait;
+	use PratoTrait, RemindableTrait;
 
 	/**
 	 * The database table used by the model.

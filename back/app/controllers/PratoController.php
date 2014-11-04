@@ -19,5 +19,13 @@ class PratoController extends BaseController {
 	{
 		return View::make('hello');
 	}
-
+        public function create(){
+            
+            return dd($_POST);
+            
+            $prato = new Prato;
+            $prato->nome = "Macarronada";
+            $prato->descricao = "massa,queijo,tomate";
+            $prato->valor = "34,90";
+        }
 }
