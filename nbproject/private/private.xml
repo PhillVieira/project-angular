@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/F:/Xampp/htdocs/project-angular/back/app/controllers/PratoController.php</file>
+            <file>file:/F:/Xampp/htdocs/project-angular/index.html</file>
+            <file>file:/F:/Xampp/htdocs/project-angular/public/js/main.js</file>
+            <file>file:/F:/Xampp/htdocs/project-angular/back/app/models/Prato.php</file>
+            <file>file:/F:/Xampp/htdocs/project-angular/back/app/config/database.php</file>
+            <file>file:/F:/Xampp/htdocs/project-angular/back/app/models/User.php</file>
+            <file>file:/F:/Xampp/htdocs/project-angular/back/app/routes.php</file>
+        </group>
     </open-files>
 </project-private>

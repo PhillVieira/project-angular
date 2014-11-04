@@ -4,7 +4,7 @@ app.controller("CadastraController", function ($scope, $http) {
     $scope.addPrato = function () {
 
 
-        $http.post("http://localhost/project-angular/back/public/prato/create",
+        $http.post("http://localhost/project-angular/back/public/prato/",
                 {params: {
                         prato: $scope.prato
                     }
