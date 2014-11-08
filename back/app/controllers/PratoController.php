@@ -8,7 +8,8 @@ class PratoController extends \BaseController {
      * @return Response
      */
     public function index() {
-        dd(Prato::get());
+        
+       
         return Response::json(Prato::get());
     }
 
@@ -27,6 +28,7 @@ class PratoController extends \BaseController {
      * @return Response
      */
     public function store() {
+      
         Prato::create(array(
             'nome' => Input::get('nome'),
             'valor' => Input::get('valor'),

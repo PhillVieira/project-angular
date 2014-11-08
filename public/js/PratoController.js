@@ -1,29 +1,37 @@
-angular.module('cardapioApp',['ngResource','ngRoute'])
-        .controller("pratoController", function ($scope, $http, Prato) {
+angular.module('cardapioApp', ['ngRoute', 'ngResource'])
+        .controller("pratoController", function ($scope, $http, PratoService) {
             $scope.pratoData = {};
-
+            $scope.pedidos = new Array();
+            $scope.total = 0;
             // loading variable to show the spinning loading icon
             $scope.loading = true;
 
-
-            Prato.get().success(function (data) {
+            $scope.addPedido = function (prato) {
+                console.log(prato);
+                
+                $scope.pedidos.push(prato);
+                $scope.total += parseFloat(prato.valor);
+            };
+            PratoService.get().success(function (data) {
 
                 $scope.pratos = data;
+               
                 $scope.loading = false;
             });
 
             // function to handle submitting the form
             // SAVE A COMMENT ======================================================
             $scope.addPrato = function () {
+
                 $scope.loading = true;
 
                 // save the comment. pass in comment data from the form
                 // use the function we created in our service
-                new Prato().save($scope.pratoData)
+                PratoService.save($scope.pratoData)
                         .success(function (data) {
 
                             // if successful, we'll need to refresh the comment list
-                            Prato.get()
+                            PratoService.get()
                                     .success(function (getData) {
                                         $scope.pratos = getData;
                                         $scope.loading = false;
@@ -31,7 +39,7 @@ angular.module('cardapioApp',['ngResource','ngRoute'])
 
                         })
                         .error(function (data) {
-                            console.log(data);
+                           
                         });
             };
 
@@ -41,11 +49,11 @@ angular.module('cardapioApp',['ngResource','ngRoute'])
                 $scope.loading = true;
 
                 // use the function we created in our service
-                Prato.destroy(id)
+                PratoService.destroy(id)
                         .success(function (data) {
 
                             // if successful, we'll need to refresh the comment list
-                            Prato.get()
+                            PratoService.get()
                                     .success(function (getData) {
                                         $scope.pratos = getData;
                                         $scope.loading = false;

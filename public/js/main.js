@@ -1,1 +1,1 @@
-var cardapioApp = angular.module('cardapioApp', ['pratoController', 'PratoService']);
+angular.module('cardapioApp', ['ngRoute','ngResource','pratoController','PratoService']);

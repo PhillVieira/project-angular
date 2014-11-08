@@ -19,5 +19,5 @@
 Route::resource('prato', 'PratoController');
 
 App::missing(function($exception) {
-    return View::make('index');
+    die('Aqu');
 });

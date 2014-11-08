@@ -1,7 +1,7 @@
 
-angular.module('cardapioApp', ['ngRoute'])
+angular.module('cardapioApp')
 
-        .factory('Prato', function ($http) {
+        .factory('PratoService', function ($http) {
 
             return {
                 // get all the pratos
@@ -10,11 +10,12 @@ angular.module('cardapioApp', ['ngRoute'])
                 },
                 // save a prato (pass in prato data)
                 save: function (pratoData) {
+                    console.table(pratoData);
                     return $http({
                         method: 'POST',
                         url: '/project-angular/back/public/prato',
-                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                        data: $.param(pratoData)
+                        data: {'nome':pratoData.nome,'valor':pratoData.valor,'desc':pratoData.desc}
+                        
                     });
                 },
                 // destroy a comment
