@@ -42,21 +42,40 @@ and open the template in the editor.
                 </div>
                 <button  class="btn btn-primary" ng-click="addPrato()">Adicionar</button>
             </form>
+            <h2 id="msg"></h2>
             <div id="listaPedidos" >
                 <h3>Seus Pedidos</h3>
-                <ul ng-repeat="pedido in pedidos" >
-                    <li>Prato: {{pedido.nome}} Valor Unit R$:{{pedido.valor}}</li>
-                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Prato</th>
+                            <th>Valor Unit.</th>
+                            <th>Quant.</th>
+                        </tr>
+                    </thead>
+
+                    <tbody ng-repeat="pedido in pedidos" >
+                        <tr>
+                            <td>{{pedido.nome}}</td>
+                            <td>R$:{{pedido.valor}}</td>
+                            <td>{{pedido.qtd}}</td>
+                            <td ng-click="removePedido(pedido.id)">Excluir</td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
                 <p>Valor Total R$:{{total}}</p>
             </div>
             <div id="listaPratos"  >
                 <h1>Pratos Disponiveis</h1>
+
                 <div ng-repeat="prato in pratos" >
                     <div class="boxPrato">
                         <h2>{{prato.nome}}</h2>
                         <p>{{prato.desc}}</p>
                         <strong>R$: {{prato.valor}}</strong>
-                        <button class="btn btn-danger" ng-click="addPedido(prato)">Pedir</button>
+                        <button class="btn btn-success" ng-click="addPedido(prato)">Pedir</button>
+                        <button class="btn btn-danger" ng-click="deletePrato(prato.id)">Deletar</button>
                     </div>
                 </div>
             </div>

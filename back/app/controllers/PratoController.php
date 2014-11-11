@@ -75,7 +75,9 @@ class PratoController extends \BaseController {
      * @return Response
      */
     public function destroy($id) {
-        //
+        $prato = Prato::where('id','=',$id);
+        $prato->delete();
+        return Response::json(array('success' => true));
     }
 
 }
