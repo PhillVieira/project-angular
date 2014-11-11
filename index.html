@@ -59,7 +59,7 @@ and open the template in the editor.
                             <td>{{pedido.nome}}</td>
                             <td>R$:{{pedido.valor}}</td>
                             <td>{{pedido.qtd}}</td>
-                            <td ng-click="removePedido(pedido.id)">Excluir</td>
+                            <td><button  class='btn btn-danger' ng-click="removePedido(pedido.id)">Excluir</button></td>
                         </tr>
                     </tbody>
                     
